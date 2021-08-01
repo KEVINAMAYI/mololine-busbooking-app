@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="{{ asset('front-end/fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-end/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('front-end/css/style.css') }}">
@@ -60,8 +62,8 @@
                             <li class="nav-item"><a href="/index" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);">Home</a></li>
                             <li class="nav-item" ><a href="/about" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >About</a></li>
                             <li class="nav-item"><a href="/services" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);"  >Services</a></li>
-                            <li class="nav-item" ><a href="/book-seat" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >Book a Seat </a></li>
-                            <li class="nav-item" ><a href="/my-bookings" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >My Bookings </a></li>
+                            <li class="nav-item" ><a href="/index/#searchBookingVehicle" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >Book a Seat </a></li>
+                            <li class="nav-item" ><a href="/index" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >My Bookings </a></li>
 
                             <li ><a href="/contact" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);">Contact</a></li>
                             @if (Route::has('login'))
@@ -79,8 +81,8 @@
                             <li class="nav-item"><a href="/index" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >Home</a></li>
                             <li class="nav-item"><a href="/about" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);">About</a></li>
                             <li class="nav-item"><a href="/services" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);">Services</a></li>
-                            <li class="nav-item"><a href="/book-seat" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >Book a Seat </a></li>
-                            <li class="nav-item" ><a href="/my-bookings" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >My Bookings </a></li>
+                            <li class="nav-item"><a href="/index/#searchBookingVehicle" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >Book a Seat </a></li>
+                            <li class="nav-item" ><a href="/my-bookings/{{ Auth::user()->id }}" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >My Bookings </a></li>
                             <li class="nav-item"><a href="/contact" style="font-weight:bold; color:rgb(40,50,60);" class="nav-link">Contact</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" style="font-weight:bold; color:rgb(40,50,60);" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -194,6 +196,147 @@
     <script src="{{ asset('front-end/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('front-end/js/aos.js') }}"></script> 
     <script src="js/main.js"></script>
+
+    <script>  
+
+      //function for printing ticket
+      function printTicket() {
+      var printbtn = document.getElementById('printbtn');
+      printbtn.style.visibility = 'hidden';
+      window.print();
+      printbtn.style.visibility = 'visible';
+      window.location.href = 'http://localhost:8000/index';
+      }
+
+      //change the search border color on focus
+      $("#searchvehicleinput").focus(function(){
+        $(this).css("border-color", "orange");
+      }); 
+
+      $("#searchvehicleinput").focusout(function(){
+        $(this).css("border-color", "green");
+      }); 
+          
+          
+     //filter vehicles by search input
+      $("#searchvehicleinput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#displayvehicle tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      //function for printing ticket
+      function printTicket() {
+      var printbtn = document.getElementById('printbtn');
+      printbtn.style.visibility = 'hidden';
+      window.print();
+      printbtn.style.visibility = 'visible';
+      window.location.href = 'http://localhost:8000/index';
+      }
+
+
+      //book seat
+      function bookSeat()
+      {
+         
+        var user_name = $('#user_name').text();
+        var seat_number = $('#seat_number').text();
+        var vehicle_number = $('#vehicle_number').text();
+        
+
+        //csrf token for prevent cross-origin site
+        $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+
+        });
+
+          $.ajax({
+          url:"/submit-booking-details",
+          type:"POST",
+          data:{
+            user_name,
+            seat_number,
+            vehicle_number
+
+          },
+          
+          //if vehicle is created successfully then display success message, reset form and hide modal
+          success:function(response){
+
+             seat_number = response.seat_number;
+             vehicle_number = response.vehicle_number;
+             from = response.from;
+             to = response.to;
+             travel_time = response.travel_time;
+             amount_paid = response.amount_paid;
+             window.location.href = "/ticket?seatnumber="+seat_number+
+                                          "&vehiclenumber="+vehicle_number+
+                                          "&from="+from+
+                                          "&to="+to+
+                                          "&travel_time="+travel_time+
+                                          "&amountpaid="+amount_paid;
+
+            },
+
+          //if there is error display them accordingly
+          error:function(response){
+          
+
+          }
+        });
+
+      }
+
+      //display booking details
+      function displayBookingDetails(bookingid)
+      {
+
+         //csrf token for prevent cross-origin site
+         $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+
+        });
+
+          $.ajax({
+          url:"/get-booking-details/"+bookingid,
+          type:"get",
+          data:{},
+          
+          //if vehicle is created successfully then display success message, reset form and hide modal
+          success:function(response){
+
+            //set values for display
+            $('#booking-username').text(response.username);
+            $('#booking-phonenumber').text(response.userphonenumber);
+            $('#booking-vehicle-number').text(response.vehiclenumber);
+            $('#booking-seat-number').text(response.seatnumber);
+            $('#booking-from').text(response.from);
+            $('#booking-to').text(response.to);
+            $('#booking-amount').text("KSH "+response.amount);
+            $('#booking-time').text(response.traveltime);
+
+            //show modal
+            $('#modal-view-booking-details').modal('show');
+             
+             
+            },
+
+          //if there is error display them accordingly
+          error:function(response){
+          
+
+          }
+        });
+
+      }
+
+
+    </script>
     
     
   

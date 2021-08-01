@@ -19,62 +19,18 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($bookings as $booking)
+                            
                           <tr>
-                            <th  class="pl-0 pr-0">QRTSRV34</th>
-                            <td  class="pl-2 pr-0">Nairobi-Kisumu</td>
-                            <td  class="pl-0 pr-0">8</td>
+                            <th  class="pl-0 pr-0">{{ $booking->vehicle->vehicle_numberplate }}</th>
+                            <td  class="pl-2 pr-0">{{ $booking->vehicle->vehicle_route }}</td>
+                            <td  class="pl-0 pr-0">{{ $booking->seat->vehicle_seat_number }}</td>
                             <td class="pl-1 pr-0">
-                              <a class="btn btn-xs btn-success rounded-pill" style="font-weight:bold; color:white;" data-toggle="modal" data-target="#modal-view-booking-details"> Full Details</a>
+                              <a onClick="displayBookingDetails({{ $booking->id }})" class="btn btn-xs btn-success rounded-pill" style="font-weight:bold; color:white;"> Full Details</a>
                             </td>
                           </tr> 
                          
-                          <tr>
-                            <th  class="pl-0 pr-0">QRTSRV34</th>
-                            <td  class="pl-2 pr-0">Nairobi-Kisumu</td>
-                            <td  class="pl-0 pr-0">8</td>
-                            <td class="pl-1 pr-0">
-                              <a class="btn btn-xs btn-success rounded-pill" style="font-weight:bold; color:white;" data-toggle="modal" data-target="#modal-view-booking-details"> Full Details</a>
-                            </td>
-                          </tr> 
-                         
-                          <tr>
-                            <th  class="pl-0 pr-0">QRTSRV34</th>
-                            <td  class="pl-2 pr-0">Nairobi-Kisumu</td>
-                            <td  class="pl-0 pr-0">8</td>
-                            <td class="pl-1 pr-0">
-                              <a class="btn btn-xs btn-success rounded-pill" style="font-weight:bold; color:white;" data-toggle="modal" data-target="#modal-view-booking-details"> Full Details</a>
-                            </td>
-                          </tr> 
-                         
-                          <tr>
-                            <th  class="pl-0 pr-0">QRTSRV34</th>
-                            <td  class="pl-2 pr-0">Nairobi-Kisumu</td>
-                            <td  class="pl-0 pr-0">8</td>
-                            <td class="pl-1 pr-0">
-                              <a class="btn btn-xs btn-success rounded-pill" style="font-weight:bold; color:white;" data-toggle="modal" data-target="#modal-view-booking-details"> Full Details</a>
-                            </td>
-                          </tr> 
-
-
-                          <tr>
-                            <th  class="pl-0 pr-0">QRTSRV34</th>
-                            <td  class="pl-2 pr-0">Nairobi-Kisumu</td>
-                            <td  class="pl-0 pr-0">8</td>
-                            <td class="pl-1 pr-0">
-                              <a class="btn btn-xs btn-success rounded-pill" style="font-weight:bold; color:white;" data-toggle="modal" data-target="#modal-view-booking-details"> Full Details</a>
-                            </td>
-                          </tr> 
-
-                         
-                          <tr>
-                            <th  class="pl-0 pr-0">QRTSRV34</th>
-                            <td  class="pl-2 pr-0">Nairobi-Kisumu</td>
-                            <td  class="pl-0 pr-0">8</td>
-                            <td class="pl-1 pr-0">
-                              <a class="btn btn-xs btn-success rounded-pill" style="font-weight:bold; color:white;" data-toggle="modal" data-target="#modal-view-booking-details"> Full Details</a>
-                            </td>
-                          </tr> 
-                         
+                          @endforeach                         
                         </tbody>
                       </table>
 
@@ -101,18 +57,19 @@
                 </div>
                 <div class="card-body text-left">
                    <h5 style="font-weight:bold; color:green;">Customer Info</h5>
-                   <div><span>Customer Name : </span><span> Kevin Amayi</span></div>
-                   <div><span>Customer ID : </span><span> 34643511</span></div>
-                   <div><span>Seat Number : </span><span> 8 </span></div>
+                   <div><span>Customer Name : </span><span id="booking-username"></span></div>
+                   <div><span>Customer Phone Number : </span><span id="booking-phonenumber"> </span></div>
                    <hr style="width:100%">
                    <h5 style="font-weight:bold; color:green;">Trave Info</h5>
-                   <div><span>From  : </span><span> Nairobi</span></div>
-                   <div><span>To : </span><span> Nakuru</span></div>
-                   <div><span>Pickup Station : </span><span> Afya Center </span></div>
-                   <div><span>Alight Station : </span><span> Thika </span></div>
-                   <div><span>Vehicle Number : </span><span> ARTDF345 </span></div>
+                   <div><span>Vehicle Number : </span><span id="booking-vehicle-number"></span></div>
+                   <div><span>Seat Number : </span><span id="booking-seat-number"></span></div>
+                   <div><span>From  : </span><span id="booking-from"> Nairobi</span></div>
+                   <div><span>To : </span><span id="booking-to"></span></div>
+                   <div><span>Travel Time : </span><span id="booking-time"></span></div>
+                   {{-- <div><span>Pickup Station : </span><span> Afya Center </span></div>
+                   <div><span>Alight Station : </span><span> Thika </span></div> --}}
                    <hr style="width:100%">
-                   <h5 style="font-weight:bold; color:green;">Amount Paid<span class="float-right">$70/ KSH 800</span> </h5>
+                   <h5 style="font-weight:bold; color:green;">Amount Paid<span id="booking-amount" class="float-right"></span> </h5>
                 </div>
             </div> 
         </div>
