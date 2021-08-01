@@ -30,6 +30,7 @@
                           </tr> 
                          
                           @endforeach                         
+
                         </tbody>
                       </table>
 
@@ -56,7 +57,6 @@
                 </div>
                 <div class="card-body text-left">
                    <h5 style="font-weight:bold; color:green;">Customer Info</h5>
-
                    <div><span>Customer Name : </span><span id="booking-username"></span></div>
                    <div><span>Customer Phone Number : </span><span id="booking-phonenumber"> </span></div>
                    <hr style="width:100%">
@@ -70,6 +70,7 @@
                    <div><span>Alight Station : </span><span> Thika </span></div> --}}
                    <hr style="width:100%">
                    <h5 style="font-weight:bold; color:green;">Amount Paid<span id="booking-amount" class="float-right"></span> </h5>
+
                 </div>
             </div> 
         </div>

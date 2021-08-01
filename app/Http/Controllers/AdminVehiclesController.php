@@ -27,7 +27,7 @@ class AdminVehiclesController extends Controller
     {
         $not_full_vehicles = Vehicle::where([
                                             ['vehicle_status','=','Not-full'],
-                                            ['sheduled','=',true]
+                                           ['sheduled','=',true]
                                             ])
                                     ->get();
         return view('admin.bookings.book_seat')->with('vehicles',$not_full_vehicles);

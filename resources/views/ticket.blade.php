@@ -12,6 +12,7 @@ $amount_paid = $_GET['amountpaid'];
 
 @extends('layouts.app',['backgroundcolor' => 'rgb(241,245,246)'])
 @section('content')
+
     <div class="container text-center">   
         <div class="row  justify-content-center pt-5 pb-4">
             <div class="col-lg-5">
@@ -23,6 +24,7 @@ $amount_paid = $_GET['amountpaid'];
                                   <p style="font-size:18px; font-weight:bold; color:green;" style="">Ticket No:</p>   
                                   <p style="margin-top:-20px; margin-right:3px;">TRET2321</p> 
                               </div>
+
                          </div>
                          <div class="card-body" style="text-align:left">
                             <h5 style="font-weight:bold; color:green;">Customer Info</h5>
@@ -40,12 +42,15 @@ $amount_paid = $_GET['amountpaid'];
                             <div><span>Travel Time : </span><span> <?php echo $travel_time; ?> </span></div>
                             <hr style="width:100%">
                             <h5 style="font-weight:bold; color:green;">Amount Paid  <span style="float:right;">KSH <?php echo"  $amount_paid";?></span> </h5>
+
                             <button id="printbtn" class="btn btn-info hidden-print" onclick="printTicket()"><span  aria-hidden="true"></span> Print</button>
                          </div>
                      </div>              
                 </div>
               </div>
+
         </div>
     </div>
 <@endsection
+
 

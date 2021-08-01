@@ -4,6 +4,7 @@
       <div class="py-5" style="background-repeat:no-repeat; background-image: url({{ asset('front-end/images/hero_1.jpg')}})">
         <div class="container pt-1" style="height:400px;">
           <div class="row align-items-center">
+
           </div>
         </div>
       </div>
@@ -27,6 +28,7 @@
                       <span class="fa fa-search form-control-feedback"></span>
                       <input id="searchvehicleinput" type="text" class="form-control" placeholder="Search for Available Vehicles By Route e.g. Nairobi-Mombasa or By Date e.g. 23 April etc" style="border:2px solid green; border-radius:33px;">
                     </div>
+
                 </div>                 
               </form>
             </div>
@@ -39,7 +41,6 @@
             <div class="card card-default">
                 <div class=" card-header"></div>
                 <div class="card-body">
-
                       <table id="displayvehicle" class="table table-striped" >
                         <thead>
                           <tr>
@@ -51,7 +52,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ( $vehicles  as $vehicle )
+                       @foreach ( $vehicles  as $vehicle )
                           <tr>
                             <th class="pl-1 pr-0">{{ $vehicle->vehicle_numberplate }}</th>
                             <td  class="pl-2 pr-0">{{ $vehicle->vehicle_route }}</td>

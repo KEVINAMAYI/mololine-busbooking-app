@@ -11,7 +11,6 @@
                      </div>
                      <div class="card-body text-left">
                         <h5 style="font-weight:bold; color:green;">Customer Info</h5>
-
                         <div><span>Customer Name : </span><span id="user_name">{{ Auth::user()->name }}</span></div>
                         <div><span>Customer ID : </span><span> {{ Auth::user()->phonenumber }}</span></div>
                         <div><span>Seat Number : </span><span id="seat_number"> {{ $booking_data['seat']}} </span></div>
@@ -26,6 +25,7 @@
 
                         <hr style="width:100%">
                         <h5 style="font-weight:bold; color:green;">Amount Payable<span class="float-right">KSH {{ $booking_data['amount'] }}</span> </h5>
+      
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                             <label class="form-check-label" for="flexRadioDefault1">
@@ -44,13 +44,11 @@
                               Stripe
                             </label>
                           </div>
-
                           <button id="submit_booking" onClick="bookSeat();" class="btn btn-success btn-large" style="width:100%; color:white; font-weight:bold; font-size:20px; margin-top:10px;">Book Now</button>
                      </div>
                  </div>              
             </div>
           </div>
-
     </div>
 </div>
 @endsection

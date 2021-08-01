@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-end/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('front-end/css/style.css') }}">
 
@@ -60,9 +61,9 @@
                             <li class="nav-item"><a href="/index" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);">Home</a></li>
                             <li class="nav-item" ><a href="/about" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >About</a></li>
                             <li class="nav-item"><a href="/services" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);"  >Services</a></li>
-
                             <li class="nav-item" ><a href="/index/#searchBookingVehicle" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >Book a Seat </a></li>
                             <li class="nav-item" ><a href="/index" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >My Bookings </a></li>
+                           
                             <li ><a href="/contact" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);">Contact</a></li>
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -81,6 +82,7 @@
                             <li class="nav-item"><a href="/services" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);">Services</a></li>
                             <li class="nav-item"><a href="/index/#searchBookingVehicle" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >Book a Seat </a></li>
                             <li class="nav-item" ><a href="/my-bookings/{{ Auth::user()->id }}" class="nav-link" style="font-weight:bold; color:rgb(40,50,60);" >My Bookings </a></li>
+                            
                             <li class="nav-item"><a href="/contact" style="font-weight:bold; color:rgb(40,50,60);" class="nav-link">Contact</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" style="font-weight:bold; color:rgb(40,50,60);" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -333,5 +335,6 @@
 
 
     </script> 
+
 </body>
 </html>

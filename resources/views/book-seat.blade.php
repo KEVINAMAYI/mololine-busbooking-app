@@ -12,7 +12,6 @@
                           <label style="font-weight:bold;">Vehicle Route</label>
                           <select class="form-select select2 pl-1" name="vehicle_route" data-placeholder="Select a Role" style="width: 100%; height:50px;" readonly>
                             <option>{{ $vehicle[0]->vehicle_route }}</option>
-                           
                           </select>
                         </div>
                       <div class="form-group">
@@ -25,9 +24,9 @@
                             @foreach ($available_seats as $available_seat)
                             <option>{{ $available_seat }}</option>
                             @endforeach 
+
                           </select>
-                      </div>
-                         
+                      </div>  
                       <div class="form-group">
                           <label for="exampleInputPassword1" style="font-weight:bold;">Amount Payable</label>
                           <input name="amount" type="number" class="form-control" id="exampleInputPassword1" placeholder="Amount" style="border:solid 1px grey;" value="{{ $vehicle[0]->vehicle_travel_amount }}" readonly>
@@ -38,8 +37,7 @@
                      </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-success btn-large" style="width:100%; color:white; font-weight:bold; font-size:20px; margin-top:10px;">Continue</button>
-
-                      </div>                      
+                  </div>                      
                   </form>                
             </div>
           </div>

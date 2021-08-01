@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10002,7 +10001,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
-
 /* Bootstrap 4 text input with search icon */
 .has-search .form-control {
   padding-left: 2.375rem;
@@ -10019,3 +10017,4 @@ h3 {
   pointer-events: none;
   color: #aaa;
 }
+

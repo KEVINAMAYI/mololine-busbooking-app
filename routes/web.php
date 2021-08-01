@@ -39,6 +39,7 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function()
     Route::get('/get-booking-details/{bookingid}',[FrontEndController::class,'getBookingDetails']);
 
 
+
 });
 
 //Admin middleware --> can only be acccessed by users with the role of Admin
