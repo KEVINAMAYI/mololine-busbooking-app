@@ -11,18 +11,21 @@
                      </div>
                      <div class="card-body text-left">
                         <h5 style="font-weight:bold; color:green;">Customer Info</h5>
-                        <div><span>Customer Name : </span><span> Kevin Amayi</span></div>
-                        <div><span>Customer ID : </span><span> 34643511</span></div>
-                        <div><span>Seat Number : </span><span> 8 </span></div>
+
+                        <div><span>Customer Name : </span><span id="user_name">{{ Auth::user()->name }}</span></div>
+                        <div><span>Customer ID : </span><span> {{ Auth::user()->phonenumber }}</span></div>
+                        <div><span>Seat Number : </span><span id="seat_number"> {{ $booking_data['seat']}} </span></div>
                         <hr style="width:100%">
                         <h5 style="font-weight:bold; color:green;">Trave Info</h5>
-                        <div><span>From  : </span><span> Nairobi</span></div>
-                        <div><span>To : </span><span> Nakuru</span></div>
-                        <div><span>Pickup Station : </span><span> Afya Center </span></div>
-                        <div><span>Alight Station : </span><span> Thika </span></div>
-                        <div><span>Vehicle Number : </span><span> ARTDF345 </span></div>
+                        <div><span>From  : </span><span>{{ substr($booking_data['vehicle_route'],0,strpos($booking_data['vehicle_route'],'-'))}}</span></div>
+                        <div><span>To : </span><span> {{ substr($booking_data['vehicle_route'],strpos($booking_data['vehicle_route'],'-')+1) }}</span></div>
+                        {{-- <div><span>Pickup Station : </span><span> Afya Center </span></div>
+                        <div><span>Alight Station : </span><span> Thika </span></div> --}}
+                        <div><span>Vehicle Number : </span><span id="vehicle_number"> {{ $booking_data['vehicle_number']}} </span></div>
+                        <div><span>Departure Time: </span><span> {{ $booking_data['time']}} </span></div>
+
                         <hr style="width:100%">
-                        <h5 style="font-weight:bold; color:green;">Amount Payable<span class="float-right">$70/ KSH 800</span> </h5>
+                        <h5 style="font-weight:bold; color:green;">Amount Payable<span class="float-right">KSH {{ $booking_data['amount'] }}</span> </h5>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                             <label class="form-check-label" for="flexRadioDefault1">
@@ -41,7 +44,8 @@
                               Stripe
                             </label>
                           </div>
-                          <a href="/ticket" type="submit" class="btn btn-success btn-large" style="width:100%; color:white; font-weight:bold; font-size:20px; margin-top:10px;">Pay Now</a>
+
+                          <button id="submit_booking" onClick="bookSeat();" class="btn btn-success btn-large" style="width:100%; color:white; font-weight:bold; font-size:20px; margin-top:10px;">Book Now</button>
                      </div>
                  </div>              
             </div>

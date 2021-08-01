@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\AdminReportsController;
 use App\Http\Controllers\AdminVehiclesController;
@@ -19,10 +20,9 @@ use App\Http\Controllers\AdminVehiclesController;
 //authentication route
 Auth::routes();
 
-
 //can be accessed without login  
-Route::get('/', function () { return view('index'); });
-Route::get('/index', function () { return view('index'); });
+Route::get('/',[FrontEndController::class,'getAvailbaleVehicles']);
+Route::get('/index',[FrontEndController::class,'getAvailbaleVehicles']);
 Route::get('/about', function () { return view('about'); });
 Route::get('/services', function () { return view('services'); });
 Route::get('/contact', function () { return view('contact'); });
@@ -30,10 +30,14 @@ Route::get('/contact', function () { return view('contact'); });
 //User middleware --> user must login to access
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function()
 {
-    Route::get('/my-bookings', function () { return view('mybookings'); });
+
     Route::get('/ticket', function () { return view('ticket'); });
-    Route::get('/confirm-booking', function () { return view('confirm-booking'); });
-    Route::get('/book-seat', function () { return view('book-seat'); });
+    Route::get('/my-bookings/{userid}',[FrontEndController::class,'displayBookings']);
+    Route::get('/book-seat/{vehicleid}',[FrontEndController::class,'getVehicleBookingDetails']);
+    Route::post('/confirm-booking',[FrontEndController::class,'getConfirmationDetails']);
+    Route::post('/submit-booking-details',[FrontEndController::class,'bookSeat']);
+    Route::get('/get-booking-details/{bookingid}',[FrontEndController::class,'getBookingDetails']);
+
 
 });
 
@@ -73,9 +77,6 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::post('/admin/update_vehicle/{vehicle}',[AdminVehiclesController::class,'updateVehicle']);
     Route::post('/admin/shedule_vehicle',[AdminVehiclesController::class,'sheduleVehicle']);
     Route::post('/admin/reshedule_vehicle',[AdminVehiclesController::class,'rescheduleVehicle']);
-
-
-     
 
     //logout route
     Route::get('/admin/logout', function(){ return redirect('/login')->with(Auth::logout()); });
