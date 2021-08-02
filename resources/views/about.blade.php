@@ -22,9 +22,8 @@
           <img src="{{ asset('front-end/images/hero_2.jpg')}}" alt="Image" class="img-fluid">
         </div>
         <div class="col-lg-4 mr-auto">
-          <h2>Car Company</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, repudiandae similique accusantium eius nulla quam laudantium sequi.</p>
-          <p>Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum commodi, laborum dolore, fuga aliquid delectus cum ipsa?</p>
+          <h2>About Mololine</h2>
+          <p>This shuttle company play a vital role in the following routes fot the Kenyan's passenger transport industry. The major routes are Naivasha, Eldoret, Kericho, Nakuru, Eldama Ravine, Kabarnet, Kisumu, Kitale and Nairobi</p>
         </div>
       </div>
     </div>
@@ -144,35 +143,4 @@
     </div>
   </div>
 
-  <div class="container site-section mb-5">
-    <div class="row justify-content-center text-center">
-      <div class="col-7 text-center mb-5">
-        <h2>How it works</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
-      </div>
-    </div>
-    <div class="how-it-works d-flex">
-      <div class="step">
-        <span class="number"><span>01</span></span>
-        <span class="caption">Time &amp; Place</span>
-      </div>
-      <div class="step">
-        <span class="number"><span>02</span></span>
-        <span class="caption">Car</span>
-      </div>
-      <div class="step">
-        <span class="number"><span>03</span></span>
-        <span class="caption">Details</span>
-      </div>
-      <div class="step">
-        <span class="number"><span>04</span></span>
-        <span class="caption">Checkout</span>
-      </div>
-      <div class="step">
-        <span class="number"><span>05</span></span>
-        <span class="caption">Done</span>
-      </div>
-
-    </div>
-  </div>
 @endsection

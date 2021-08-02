@@ -127,43 +127,31 @@
                     <div class="col-lg-3">
                       <h2 class="footer-heading mb-4">Quick Links</h2>
                       <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/index">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/index/#searchBookingVehicle">Book a Seat</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                       </ul>
-                    </div>
+                    </div>  
                     <div class="col-lg-3">
-                      <h2 class="footer-heading mb-4">Quick Links</h2>
+                      <h2 class="footer-heading mb-4">Address 1</h2>
                       <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">P. O. Box 34700, Nairobi,</a></li>
+                        <li><a href="#">+254 722 761 512 </a></li>
+                        <li><a href="#">711 341 093</a></li>
+                        <li><a href="#">+254-051-2215529</a></li>
                       </ul>
-                    </div>
+                    </div>  
                     <div class="col-lg-3">
-                      <h2 class="footer-heading mb-4">Quick Links</h2>
+                      <h2 class="footer-heading mb-4">Address 2</h2>
                       <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#"> P.O.Box: 13668 – 20100 Nakuru</a></li>
+                        <li><a href="#">(+254) 0733 778935</a></li>
+                        <li><a href="#">+254-203556368</a></li>
+                        <li><a href="#">+254722735607</a></li>
                       </ul>
-                    </div>
-                    <div class="col-lg-3">
-                      <h2 class="footer-heading mb-4">Quick Links</h2>
-                      <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                      </ul>
-                    </div>
+                    </div>              
                   </div>
                 </div>
               </div>

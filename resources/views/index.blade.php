@@ -84,33 +84,33 @@
           <div class="col-lg-4">
             <div class="service-1">
               <span class="service-1-icon">
-                <span class="flaticon-car-1"></span>
+                <img class="mt-3" src="{{ asset('front-end/images/car.png')}}" width="50" height="50">
               </span>
               <div class="service-1-contents">
-                <h3>Repair</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                <h3>Travel</h3>
+                <p>We offer traveling services for different routes such as Nairobi-Eldoret etc.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="service-1">
               <span class="service-1-icon">
-                <span class="flaticon-traffic"></span>
+                <img class="mt-3" src="{{ asset('front-end/images/parcel.png')}}" width="50" height="50">
               </span>
               <div class="service-1-contents">
-                <h3>Car Accessories</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                <h3>Parcel Delivery</h3>
+                <p>We offer parcel delivery between different places.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="service-1">
               <span class="service-1-icon">
-                <span class="flaticon-valet"></span>
+                <img class="mt-3" src="{{ asset('front-end/images/lease.png')}}" width="50" height="50">
               </span>
               <div class="service-1-contents">
-                <h3>Own a Car</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                <h3>Vehicle Leasing</h3>
+                <p>You can also lease some of our vehicles for your own use.</p>
               </div>
             </div>
           </div>
@@ -123,29 +123,37 @@
       <div class="row justify-content-center text-center">
         <div class="col-7 text-center mb-5">
           <h2>How it works</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
+          <p>Want to book a seat,follow this steps and book a seat in minutes.</p>
         </div>
       </div>
       <div class="how-it-works d-flex">
         <div class="step">
           <span class="number"><span>01</span></span>
-          <span class="caption">Time &amp; Place</span>
+          <span class="caption">Create Account</span>
         </div>
         <div class="step">
           <span class="number"><span>02</span></span>
-          <span class="caption">Car</span>
+          <span class="caption">Navigate to Vehicles</span>
         </div>
         <div class="step">
           <span class="number"><span>03</span></span>
-          <span class="caption">Details</span>
+          <span class="caption">Choose  Vehicle</span>
         </div>
         <div class="step">
           <span class="number"><span>04</span></span>
-          <span class="caption">Checkout</span>
+          <span class="caption">Choose desired seat</span>
         </div>
         <div class="step">
           <span class="number"><span>05</span></span>
-          <span class="caption">Done</span>
+          <span class="caption">Make payments</span>
+        </div>
+        <div class="step">
+          <span class="number"><span>06</span></span>
+          <span class="caption">Print Ticket</span>
+        </div>
+        <div class="step">
+          <span class="number"><span>07</span></span>
+          <span class="caption">Confirm Booking</span>
         </div>
 
       </div>
@@ -155,40 +163,40 @@
         <div class="row justify-content-center text-center mb-5">
           <div class="col-7 text-center mb-5">
             <h2>Customer Testimony</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
+            <p>Check out what our customers say about us</p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 mb-4 mb-lg-0">
             <div class="testimonial-2">
               <blockquote class="mb-4">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                <p>"Mololine has always stood out as compared to other providers, they provide very nice services"</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
                 <img src="{{ asset('front-end/images/person_1.jpg')}}" alt="Image" class="img-fluid mr-3">
-                <span>Mike Fisher</span>
+                <span>Kevin Amayi</span>
               </div>
             </div>
           </div>
           <div class="col-lg-4 mb-4 mb-lg-0">
             <div class="testimonial-2">
               <blockquote class="mb-4">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                <p>"I remember the first time using mololine, I was blown away by the quality services they provide."</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
                 <img src="{{ asset('front-end/images/person_2.jpg')}}" alt="Image" class="img-fluid mr-3">
-                <span>Jean Stanley</span>
+                <span>Donald Kipkoech </span>
               </div>
             </div>
           </div>
           <div class="col-lg-4 mb-4 mb-lg-0">
             <div class="testimonial-2">
               <blockquote class="mb-4">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                <p>"Speak of efficiency and effectiveness, mololine is king, they are really a nice touch.I would recommend anyone."</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
                 <img src="{{ asset('front-end/images/person_3.jpg')}}" alt="Image" class="img-fluid mr-3">
-                <span>Katie Rose</span>
+                <span>Mark Banda</span>
               </div>
             </div>
           </div>

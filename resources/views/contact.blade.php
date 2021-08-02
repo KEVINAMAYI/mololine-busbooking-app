@@ -8,7 +8,6 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-6 text-center text-white">
             <h1>Contact Us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
       </div>
@@ -19,8 +18,7 @@
     <div class="container">
       <div class="row justify-content-center text-center">
       <div class="col-7 text-center mb-5">
-        <h2>Contact Us Or Use This Form To Rent A Car</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
+        <h2>Contact Us Or Use This Form To Book A Seat</h2>
       </div>
     </div>
       <div class="row">
@@ -58,10 +56,16 @@
             <h3 class="text-black mb-4">Contact Info</h3>
             <ul class="list-unstyled footer-link">
               <li class="d-block mb-3">
-                <span class="d-block text-black">Address:</span>
-                <span>34 Street Name, City Name Here, United States</span></li>
-              <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
-              <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                <span class="d-block text-black">Address and Contact information 1:</span>
+                <span>P. O. Box 34700, Nairobi,</span></li>
+              <li class="d-block mb-3"><span class="d-block text-black">Landline Numbers :</span><span> +254 208 333 9296</span></li>
+              <li class="d-block mb-3"><span class="d-block text-black">Mobile Numbers :</span><span>+254 722 761 512 / 711 341 093/ +254-051-2215529</span></li>
+            </ul>
+            <ul class="list-unstyled footer-link">
+              <li class="d-block mb-3">
+                <span class="d-block text-black">Address and Contact information 2:</span>
+                <span>P.O.Box: 13668 – 20100 Nakuru</span></li>
+              <li class="d-block mb-3"><span class="d-block text-black">Mobile Numbers :</span><span> (+254) 0733 778935 / +254-203556368 / +254722735607</span></li>
             </ul>
           </div>
         </div>
