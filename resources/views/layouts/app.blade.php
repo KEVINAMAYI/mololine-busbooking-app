@@ -134,7 +134,7 @@
                         <li><a href="/contact">Contact Us</a></li>
                       </ul>
                     </div>  
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 ml-auto">
                       <h2 class="footer-heading mb-4">Address 1</h2>
                       <ul class="list-unstyled">
                         <li><a href="#">P. O. Box 34700, Nairobi,</a></li>
@@ -143,7 +143,7 @@
                         <li><a href="#">+254-051-2215529</a></li>
                       </ul>
                     </div>  
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 ml-auto">
                       <h2 class="footer-heading mb-4">Address 2</h2>
                       <ul class="list-unstyled">
                         <li><a href="#"> P.O.Box: 13668 – 20100 Nakuru</a></li>

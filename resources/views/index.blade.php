@@ -1,11 +1,15 @@
 @extends('layouts.app',['backgroundcolor' => 'rgb(255,255,255)'])
 
 @section('content')
-      <div class="py-5" style="background-repeat:no-repeat; background-image: url({{ asset('front-end/images/hero_1.jpg')}})">
-        <div class="container pt-1" style="height:400px;">
-          <div class="row align-items-center">
-
-          </div>
+<div class="py-5" style="background:#C33764; background:linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url({{ asset('front-end/images/car.jpg')}}); background-repeat:no-repeat; background-size:cover;">
+  <div class="container pt-1" style="height:500px;">
+            <div class="row align-items-center justify-content-center" style="padding-top:230px;">
+              <div class="col-lg-6 text-center pt-3">
+                <h1 style="color:white; font-weight:bold; font-size:50px;">Welcome</h1>
+                <p style="color:white; font-weight:bold;">Get Started By Booking Your Seat Now.</p>
+                <a href="#searchBookingVehicle" class="btn btn-lg" style="background-color:orange; color:white; border-radius:40px; border:none; width:160px;">Book Seat</a>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -73,7 +77,7 @@
     </div>
      
 
-    <div class="site-section section-3" style="background-image: url({{asset('/front-end/images/hero_2.jpg')}});">
+    <div class="site-section section-3" style="background-image: url({{asset('/front-end/images/driver.jpg')}});">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
@@ -173,8 +177,8 @@
                 <p>"Mololine has always stood out as compared to other providers, they provide very nice services"</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
-                <img src="{{ asset('front-end/images/person_1.jpg')}}" alt="Image" class="img-fluid mr-3">
-                <span>Kevin Amayi</span>
+                <img src="{{ asset('front-end/images/erick.png')}}" alt="Image" class="img-fluid mr-3">
+                <span>Erick Mululu</span>
               </div>
             </div>
           </div>
@@ -184,7 +188,7 @@
                 <p>"I remember the first time using mololine, I was blown away by the quality services they provide."</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
-                <img src="{{ asset('front-end/images/person_2.jpg')}}" alt="Image" class="img-fluid mr-3">
+                <img src="{{ asset('front-end/images/donald.jpeg')}}" alt="Image" class="img-fluid mr-3">
                 <span>Donald Kipkoech </span>
               </div>
             </div>
@@ -192,11 +196,11 @@
           <div class="col-lg-4 mb-4 mb-lg-0">
             <div class="testimonial-2">
               <blockquote class="mb-4">
-                <p>"Speak of efficiency and effectiveness, mololine is king, they are really a nice touch.I would recommend anyone."</p>
+                <p>"Speak of efficiency and effectiveness, mololine is king,I would recommend anyone to try their services."</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
-                <img src="{{ asset('front-end/images/person_3.jpg')}}" alt="Image" class="img-fluid mr-3">
-                <span>Mark Banda</span>
+                <img src="{{ asset('front-end/images/kevin.jpeg')}}" alt="Image" class="img-fluid mr-3">
+                <span>Kevin Amayi</span>
               </div>
             </div>
           </div>

@@ -2,19 +2,20 @@
 
 @section('content')
 <div class="ftco-blocks-cover-1">
-    <div class="ftco-cover-1 innerpage" style="background-image: url( {{ asset('front-end/images/hero_2.jpg') }})">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h1>Our Services</h1>
-            <p>Below are the major services that we provide.</p>
-          </div>
+  <div class="py-5" style="background:#C33764; background:linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url({{ asset('front-end/images/car.jpg')}}); background-repeat:no-repeat; background-size:cover;">
+    {{-- <img src="" alt=""> --}}
+    <div class="container pt-1" style="height:500px;">
+      <div class="row align-items-center justify-content-center" style="padding-top:230px;">
+        <div class="col-lg-6 text-center pt-3">
+          <h1 style="color:white; font-weight:bold; font-size:50px;">Services</h1>
+          <p style="color:white; font-weight:bold;">Check out the Services We Offer</p>
         </div>
+      </div>
       </div>
     </div>
   </div>
 
-  <div class="site-section">
+  <div class="site-section mt-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
