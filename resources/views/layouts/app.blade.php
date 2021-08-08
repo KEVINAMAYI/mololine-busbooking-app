@@ -194,6 +194,16 @@
       window.location.href = 'http://localhost:8000/index';
       }
 
+      //check radio buttons for payments
+      $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+          var val = $(this).attr("value");
+          var target = $("." + val);
+          $(".msg").not(target).hide();
+          $(target).show();
+        });
+      });
+
       //change the search border color on focus
       $("#searchvehicleinput").focus(function(){
         $(this).css("border-color", "orange");
@@ -221,60 +231,6 @@
       window.location.href = 'http://localhost:8000/index';
       }
 
-
-      //book seat
-      function bookSeat()
-      {
-         
-        var user_name = $('#user_name').text();
-        var seat_number = $('#seat_number').text();
-        var vehicle_number = $('#vehicle_number').text();
-        
-
-        //csrf token for prevent cross-origin site
-        $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-
-        });
-
-          $.ajax({
-          url:"/submit-booking-details",
-          type:"POST",
-          data:{
-            user_name,
-            seat_number,
-            vehicle_number
-
-          },
-          
-          //if vehicle is created successfully then display success message, reset form and hide modal
-          success:function(response){
-
-             seat_number = response.seat_number;
-             vehicle_number = response.vehicle_number;
-             from = response.from;
-             to = response.to;
-             travel_time = response.travel_time;
-             amount_paid = response.amount_paid;
-             window.location.href = "/ticket?seatnumber="+seat_number+
-                                          "&vehiclenumber="+vehicle_number+
-                                          "&from="+from+
-                                          "&to="+to+
-                                          "&travel_time="+travel_time+
-                                          "&amountpaid="+amount_paid;
-
-            },
-
-          //if there is error display them accordingly
-          error:function(response){
-          
-
-          }
-        });
-
-      }
 
       //display booking details
       function displayBookingDetails(bookingid)

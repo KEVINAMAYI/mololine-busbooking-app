@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -9,6 +10,7 @@ use App\Models\SeatBooking;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\VehicleShedule;
+
 
 
 class FrontEndController extends Controller
@@ -93,45 +95,6 @@ class FrontEndController extends Controller
         $booking_data = $request->all();
         // dd($booking_data);
         return view('confirm-booking')->with('booking_data', $booking_data);
-
-    }
-
-
-    //book a seat
-    public function bookSeat(Request $request)
-    {
-
-        $data = $request->all();
-        $user_id = User::where('name',$data['user_name'])->get()[0]->id;
-        $vehicle_id = Vehicle::where('vehicle_numberplate',$data['vehicle_number'])->get()[0]->id;
-        $seat_id = VehicleSeat::where('vehicle_seat_number',$data['seat_number'])->get()[0]->id;
-
-        //update booking 
-        $SeatBooking = SeatBooking::create([
-            'user_id' => $user_id,
-            'vehicle_id' => $vehicle_id,
-            'seat_id' => $seat_id
-              ]);
-        
-        $user_phonenumber = User::where('name',$data['user_name'])->get()[0]->phonenumber;
-        $vehicle_route = Vehicle::where('vehicle_numberplate',$data['vehicle_number'])->get()[0]->vehicle_route;
-        $from = substr($vehicle_route,0,strpos($vehicle_route,'-'));
-        $to = substr($vehicle_route,strpos($vehicle_route,'-')+1);
-        $travel_time = date("h:i:s a jS F, Y", strtotime(VehicleShedule::where('vehicle_id',$vehicle_id)->get('departuretime')->pluck('departuretime')->last()));
-        $amount_paid = Vehicle::where('vehicle_numberplate',$data['vehicle_number'])->get()[0]->vehicle_travel_amount;
-
-
-        return response()->json([
-        'username' => $data['user_name'],
-        'user_phonenumber'=> $user_phonenumber,
-        'seat_number' => $data['seat_number'],
-        'vehicle_number' => $data['vehicle_number'],
-        'from' => $from,
-        'to' => $to,
-        'travel_time' => $travel_time,
-        'amount_paid' => $amount_paid
-
-    ]);
 
     }
 

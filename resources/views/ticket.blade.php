@@ -1,17 +1,24 @@
+<?php 
 
-<?php
+    echo '<script>
 
-$seatnumber = $_GET['seatnumber'];
-$vehiclenumber = $_GET['vehiclenumber'];
-$from = $_GET['from'];
-$to = $_GET['to'];
-$travel_time = $_GET['travel_time'];
-$amount_paid = $_GET['amountpaid'];
+        window.onbeforeunload = function() {
+          window.close();
+         }
 
+        </script>';
 ?>
 
 @extends('layouts.app',['backgroundcolor' => 'rgb(241,245,246)'])
+
 @section('content')
+
+{{-- display success and error message on a successful/error action --}}
+@if (session()->has('booking-success'))
+<div class="alert alert-success mt-4 mb-3 ml-4 mr-4">
+  {{ session()->get('booking-success') }}
+</div>
+@endif
 
     <div class="container text-center">   
         <div class="row  justify-content-center pt-5 pb-4">
@@ -28,21 +35,20 @@ $amount_paid = $_GET['amountpaid'];
                          </div>
                          <div class="card-body" style="text-align:left">
                             <h5 style="font-weight:bold; color:green;">Customer Info</h5>
-                            <div><span>Customer Name : </span><span> Kevin Amayi</span></div>
-                            <div><span>Customer ID : </span><span> 34643511</span></div>
+                            <div><span>Customer Name : </span><span> {{ $ticket_data['user_name'] }}</span></div>
+                            <div><span>Customer Phone Number : </span><span>{{ $ticket_data['user_phonenumber'] }}</span></div>
 
-                            <div><span>Seat Number : </span><span><?php echo $seatnumber; ?></span></div>
+                            <div><span>Seat Number : </span><span>{{ $ticket_data['seat_number'] }}</span></div>
                             <hr style="width:100%">
                             <h5 style="font-weight:bold; color:green;">Trave Info</h5>
-                            <div><span>From  : </span><span> <?php echo $from; ?></span></div>
-                            <div><span>To : </span><span> <?php echo $to; ?></span></div>
+                            <div><span>From  : </span><span> {{ $ticket_data['from'] }}</span></div>
+                            <div><span>To : </span><span> {{ $ticket_data['to'] }}</span></div>
                             {{-- <div><span>Pickup Station : </span><span> Afya Center </span></div>
                             <div><span>Alight Station : </span><span> Thika </span></div> --}}
-                            <div><span>Vehicle Number : </span><span> <?php echo $vehiclenumber;?> </span></div>
-                            <div><span>Travel Time : </span><span> <?php echo $travel_time; ?> </span></div>
+                            <div><span>Vehicle Number : </span><span>{{ $ticket_data['vehicle_number'] }}</span></div>
+                            <div><span>Travel Time : </span><span>{{ $ticket_data['travel_time'] }}</span></div>
                             <hr style="width:100%">
-                            <h5 style="font-weight:bold; color:green;">Amount Paid  <span style="float:right;">KSH <?php echo"  $amount_paid";?></span> </h5>
-
+                            <h5 style="font-weight:bold; color:green;">Amount Paid  <span style="float:right;">KSH  {{ $ticket_data['amount_paid'] }}</span> </h5>
                             <button id="printbtn" class="btn btn-info hidden-print" onclick="printTicket()"><span  aria-hidden="true"></span> Print</button>
                          </div>
                      </div>              

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\AdminReportsController;
@@ -27,19 +28,24 @@ Route::get('/about', function () { return view('about'); });
 Route::get('/services', function () { return view('services'); });
 Route::get('/contact', function () { return view('contact'); });
 
+
+
 //User middleware --> user must login to access
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function()
 {
-
+    
     Route::get('/ticket', function () { return view('ticket'); });
     Route::get('/my-bookings/{userid}',[FrontEndController::class,'displayBookings']);
     Route::get('/book-seat/{vehicleid}',[FrontEndController::class,'getVehicleBookingDetails']);
-    Route::post('/confirm-booking',[FrontEndController::class,'getConfirmationDetails']);
+    Route::post('/confirm-booking',[FrontEndController::class,'getConfirmationDetails'])->name('confirm-booking');
     Route::post('/submit-booking-details',[FrontEndController::class,'bookSeat']);
     Route::get('/get-booking-details/{bookingid}',[FrontEndController::class,'getBookingDetails']);
+    
+    //paypal routes
+    Route::post('/postpaywithpaypal',[PaypalController::class,'postPaymentWithpaypal'])->name('paypal');
+    Route::get('/getpaymentstatus',[PaypalController::class,'getPaymentStatus'])->name('status');
 
-
-
+    
 });
 
 //Admin middleware --> can only be acccessed by users with the role of Admin

@@ -305,7 +305,7 @@ class AdminVehiclesController extends Controller
             array_push($allseats,VehicleSeat::all()[$i]->id);
         }
 
-         //unbooked seats
+         //unbooked seats = allseats-bookedseats
          $unbookedseats = array_diff($allseats,$bookedseats);
         
          return response()->json([
