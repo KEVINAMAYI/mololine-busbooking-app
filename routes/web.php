@@ -31,7 +31,7 @@ Route::get('/contact', function () { return view('contact'); });
 
 
 //User middleware --> user must login to access
-Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function()
+Route::group(['middleware' => 'auth'], function()
 {
     
     Route::get('/ticket', function () { return view('ticket'); });
@@ -49,7 +49,7 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function()
 });
 
 //Admin middleware --> can only be acccessed by users with the role of Admin
-Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+Route::group(['middleware' => 'admin'], function()
 {
     Route::get('/admin', function(){ return view('admin/index'); });
 
